@@ -35,10 +35,15 @@ function App() {
     background-image:url(${imgData.url});
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
+    filter:blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index = 00;
   `;
 
   return (
-    <BackgroundImage>
+    <><BackgroundImage />
       <div className="Header-Menu">
         <Header />
         <Menu /> 
@@ -49,7 +54,8 @@ function App() {
           <PhotoInfo imgData={imgData}/>  
         </Card>
       </div>
-    </BackgroundImage>
+      
+    </>
   );
 }
 
