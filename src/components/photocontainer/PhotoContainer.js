@@ -1,11 +1,10 @@
 import React from 'react';
+import {CardImg} from 'reactstrap';
 import './photo-cont.css';
 
 const PhotoContainer = ({imgData}) => {
     return(
-        <div className = "img-cont">
-            <img src = {imgData.url}></img>
-        </div>
+        <CardImg top width="100%" src = {imgData.url} alt="Card image cap" />
     )
 }
 

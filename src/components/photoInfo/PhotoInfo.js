@@ -1,15 +1,22 @@
 import React from 'react';
+import {CardText, 
+    CardBody,
+    CardTitle, 
+    CardSubtitle, 
+    Button} from 'reactstrap';
 import './photo-info.css';
 
 const PhotoInfo = ({imgData}) => {
     console.log('in PhotosInfo',imgData)
     return(
-        <div className="pic-info">
-            <h2 className="info-title">{imgData.title}</h2>
-            <h2 className="info-title">Date: {imgData.date}</h2>
-            <h2 className="info-title">Quality:</h2>
-            <p className="img-descipt">Discription: {imgData.explanation}</p>
-        </div>
+        <CardBody>
+            <CardTitle>{imgData.title}</CardTitle>
+            <hr></hr>
+            <CardSubtitle>Date: {imgData.date}</CardSubtitle>
+            <CardText>Discription: {imgData.explanation}</CardText>
+            <CardSubtitle>Shot By: {imgData.copyright}</CardSubtitle>
+            <Button href={imgData.hdurl}>See Full Image</Button>
+        </CardBody>
     )
 }
 

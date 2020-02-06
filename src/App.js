@@ -1,10 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import './components/header/Header';
+
+import axios from "axios";
+
+import {Card} from 'reactstrap';
+import styled from 'styled-components'
+
 import Header from "./components/header/Header";
 import PhotoInfo from "./components/photoInfo/PhotoInfo";
-import axios from "axios";
+import Menu from "./components/menu/Menu";
 import PhotoContainer from "./components/photocontainer/PhotoContainer";
+
+
+
+
 
 function App() {
 
@@ -20,14 +29,27 @@ function App() {
 
   useEffect(imgFetch, [])
 
+  const BackgroundImage = styled.div`
+    width:100vw;
+    height:100vh;
+    background-image:url(${imgData.url});
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+  `;
+
   return (
-    <div className="App">
-      <div className="text-body">
+    <BackgroundImage>
+      <div className="Header-Menu">
         <Header />
-        <PhotoInfo imgData={imgData}/>  
+        <Menu /> 
       </div>
-      <PhotoContainer imgData={imgData}/>
-    </div>
+      <div className="App">
+        <Card>
+          <PhotoContainer imgData={imgData}/>
+          <PhotoInfo imgData={imgData}/>  
+        </Card>
+      </div>
+    </BackgroundImage>
   );
 }
 
