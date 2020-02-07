@@ -1,4 +1,14 @@
 .App{
-    width: 600px;
+    width: 700px;
     margin: auto auto;
+    margin-top: 50px;
+}
+.AppCenter{
+    display: flex;
+    width: 600px;
+}
+.menuList{
+    position: absolute;
+    width: 130px;
+    margin: 25px;
 }
